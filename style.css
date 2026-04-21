@@ -1,0 +1,173 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* BODY */
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background: radial-gradient(circle at top, #1e3a8a, #020617);
+  color: white;
+  text-align: center;
+  min-height: 100vh;
+}
+
+/* CONTAINER */
+.container {
+  max-width: 500px;
+  margin: 0 auto;
+  padding: 60px 20px 40px;
+}
+
+/* TITLE */
+h1 {
+  font-size: clamp(22px, 6vw, 34px);
+  margin-bottom: 10px;
+}
+
+/* DESC */
+p {
+  font-size: 14px;
+  opacity: 0.7;
+  margin-bottom: 25px;
+}
+
+/* SEARCH */
+#search {
+  width: 100%;
+  padding: 12px;
+  border-radius: 30px;
+  border: 1px solid rgba(255,255,255,0.2);
+  background: rgba(255,255,255,0.08);
+  backdrop-filter: blur(8px);
+  color: white;
+  text-align: center;
+  outline: none;
+  margin-bottom: 25px;
+}
+
+#search::placeholder {
+  color: rgba(255,255,255,0.5);
+}
+
+/* ========================= */
+/* CATEGORY SCROLL */
+/* ========================= */
+.categories {
+  display: flex;
+  gap: 10px;
+  overflow-x: auto;
+  overflow-y: hidden;
+  padding: 10px 5px;
+  margin-bottom: 25px;
+  scroll-behavior: smooth;
+  flex-wrap: nowrap;
+  cursor: grab;
+}
+
+.categories::-webkit-scrollbar {
+  display: none;
+}
+
+.categories button {
+  flex: 0 0 auto;
+  padding: 8px 15px;
+  border-radius: 20px;
+  border: none;
+  cursor: pointer;
+  background: rgba(255,255,255,0.1);
+  color: white;
+  transition: 0.3s;
+}
+
+.categories button.active {
+  background: white;
+  color: black;
+}
+
+.categories:active {
+  cursor: grabbing;
+}
+
+/* ========================= */
+/* LINKS */
+/* ========================= */
+#links {
+  min-height: 320px;
+}
+
+/* BUTTON */
+.btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  position: relative;
+
+  border: 2px solid rgba(255,255,255,0.6);
+  border-radius: 40px;
+
+  padding: 15px;
+  padding-left: 60px;
+
+  margin: 12px 0;
+
+  text-decoration: none;
+  color: white;
+  font-weight: bold;
+
+  transition: 0.3s;
+}
+
+/* ICON BULAT */
+.icon {
+  position: absolute;
+  left: 12px;
+
+  width: 38px;
+  height: 38px;
+
+  border-radius: 50%;
+  background: white;
+
+  padding: 6px;
+  object-fit: contain;
+
+  box-shadow: 0 2px 6px rgba(0,0,0,0.25);
+}
+
+/* TEXT */
+.btn span {
+  width: 100%;
+  text-align: center;
+}
+
+/* HOVER */
+.btn:hover {
+  background: white;
+  color: black;
+  transform: scale(1.05);
+}
+
+/* CLICK */
+.btn:active {
+  transform: scale(0.97);
+}
+
+/* RESPONSIVE */
+@media (max-width: 480px) {
+  .container {
+    padding: 40px 15px;
+  }
+
+  .btn {
+    padding: 13px;
+    padding-left: 55px;
+  }
+
+  .icon {
+    width: 34px;
+    height: 34px;
+  }
+}
