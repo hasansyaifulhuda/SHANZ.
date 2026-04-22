@@ -8,11 +8,26 @@ const categoryContainer = document.getElementById("categories");
 let currentCategory = "all";
 
 /* =============================== */
-/* CATEGORY LIST (AUTO) */
+/* SHUFFLE (RANDOM) */
+/* =============================== */
+function shuffleArray(arr) {
+  return [...arr].sort(() => Math.random() - 0.5);
+}
+
+/* =============================== */
+/* PREPARE DATA (ACAK SEKALI) */
+/* =============================== */
+const shuffledData = data.map(d => ({
+  category: d.category,
+  items: shuffleArray(d.items)
+}));
+
+/* =============================== */
+/* CATEGORY LIST */
 /* =============================== */
 const categories = [
   "all",
-  ...data.map(d => d.category.toLowerCase())
+  ...shuffledData.map(d => d.category.toLowerCase())
 ];
 
 /* =============================== */
@@ -43,11 +58,11 @@ function renderCategories() {
 /* AMBIL SEMUA ITEM */
 /* =============================== */
 function getAllItems() {
-  return data.flatMap(d => d.items);
+  return shuffledData.flatMap(d => d.items);
 }
 
 /* =============================== */
-/* RENDER LINKS (FIX + DESCRIPTION) */
+/* RENDER LINKS */
 /* =============================== */
 function renderLinks() {
   container.innerHTML = "";
@@ -56,7 +71,7 @@ function renderLinks() {
   let items =
     currentCategory === "all"
       ? getAllItems()
-      : (data.find(d => d.category.toLowerCase() === currentCategory)?.items || []);
+      : (shuffledData.find(d => d.category.toLowerCase() === currentCategory)?.items || []);
 
   items.forEach(item => {
     if (item.name.toLowerCase().includes(keyword)) {
