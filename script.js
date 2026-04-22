@@ -7,8 +7,13 @@ const categoryContainer = document.getElementById("categories");
 
 let currentCategory = "all";
 
-/* kategori */
-const categories = ["all", ...data.map(d => d.category)];
+/* =============================== */
+/* CATEGORY LIST (AUTO) */
+/* =============================== */
+const categories = [
+  "all",
+  ...data.map(d => d.category.toLowerCase())
+];
 
 /* =============================== */
 /* RENDER CATEGORY */
@@ -35,22 +40,23 @@ function renderCategories() {
 }
 
 /* =============================== */
-/* DATA */
+/* AMBIL SEMUA ITEM */
 /* =============================== */
 function getAllItems() {
   return data.flatMap(d => d.items);
 }
 
 /* =============================== */
-/* RENDER LINKS */
+/* RENDER LINKS (FIX + DESCRIPTION) */
 /* =============================== */
 function renderLinks() {
   container.innerHTML = "";
   const keyword = searchInput.value.toLowerCase();
 
-  let items = currentCategory === "all"
-    ? getAllItems()
-    : (data.find(d => d.category === currentCategory)?.items || []);
+  let items =
+    currentCategory === "all"
+      ? getAllItems()
+      : (data.find(d => d.category.toLowerCase() === currentCategory)?.items || []);
 
   items.forEach(item => {
     if (item.name.toLowerCase().includes(keyword)) {
@@ -58,26 +64,37 @@ function renderLinks() {
       a.href = item.url;
       a.className = "btn";
       a.target = "_blank";
+
       a.innerHTML = `
-  <img src="${item.icon}" class="icon">
-  <span>${item.name}</span>
-`;
+        <div class="icon">
+          <img src="${item.icon}" alt="">
+        </div>
+
+        <div class="text">
+          <div class="title">${item.name}</div>
+          <div class="desc">${item.description || ""}</div>
+        </div>
+      `;
+
       container.appendChild(a);
     }
   });
 }
 
-/* search */
+/* =============================== */
+/* SEARCH */
+/* =============================== */
 searchInput.addEventListener("input", renderLinks);
 
-/* init */
+/* =============================== */
+/* INIT */
+/* =============================== */
 renderCategories();
 renderLinks();
 
-
-// ===============================
-// DRAG SCROLL (NATURAL)
-// ===============================
+/* =============================== */
+/* DRAG SCROLL (PC SUPPORT) */
+/* =============================== */
 const slider = document.querySelector(".categories");
 
 let isDown = false;
