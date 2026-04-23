@@ -46,7 +46,19 @@ const data = [
         url: "https://claude.ai/",
         description: "AI assistant dari Anthropic",
         icon: "https://www.google.com/s2/favicons?sz=64&domain=https://claude.ai/"
-      }
+      },
+      {
+        name: "SOFTGEN AI",
+        url: "https://softgen.ai",
+        description: "AI untuk bantu pembuatan konten & ide",
+        icon: "https://www.google.com/s2/favicons?sz=64&domain=softgen.ai"
+      },
+      {
+        name: "AUTODRAW",
+        url: "https://autodraw.com",
+        description: "AI menggambar otomatis dari sketsa",
+        icon: "https://www.google.com/s2/favicons?sz=64&domain=autodraw.com"
+      },
     ]
   },
 
@@ -148,6 +160,12 @@ const data = [
         url: "https://imagecolorpicker.com/",
         description: "Ambil warna dari gambar",
         icon: "https://www.google.com/s2/favicons?sz=64&domain=imagecolorpicker.com"
+      },
+      {
+        name: "FLOORPLANNER",
+        url: "https://floorplanner.com",
+        description: "Desain denah rumah dan interior 3D",
+        icon: "https://www.google.com/s2/favicons?sz=64&domain=floorplanner.com"
       }
     ]
   },
@@ -155,6 +173,18 @@ const data = [
   {
     category: "TOOLS",
     items: [
+      {
+        name: "JNCKMEDIA",
+        url: "https://jnckmedia.com",
+        description: "Website media dan konten digital",
+        icon: "https://www.google.com/s2/favicons?sz=64&domain=jnckmedia.com"
+      },
+      {
+        name: "STIRLING PDF",
+        url: "https://stirlingpdf.io",
+        description: "Tools PDF lengkap dan open source",
+        icon: "https://www.google.com/s2/favicons?sz=64&domain=stirlingpdf.io"
+      },
       {
         name: "SPEEDTEST",
         url: "https://www.speedtest.net/id",
@@ -245,6 +275,24 @@ const data = [
         url: "https://www.crazygames.com/",
         description: "Website game browser populer",
         icon: "https://www.google.com/s2/favicons?sz=64&domain=https://www.crazygames.com/"
+      },
+      {
+        name: "RETROGAMES",
+        url: "https://retrogames.cc",
+        description: "Main game klasik retro langsung di browser",
+        icon: "https://www.google.com/s2/favicons?sz=64&domain=retrogames.cc"
+      },
+      {
+        name: "NITE GAMES",
+        url: "https://nite.games",
+        description: "Kumpulan game online ringan dan seru",
+        icon: "https://www.google.com/s2/favicons?sz=64&domain=nite.games"
+      },
+      {
+      name: "VENGE IO",
+      url: "https://venge.io",
+      description: "Game FPS online multiplayer di browser",
+      icon: "https://www.google.com/s2/favicons?sz=64&domain=venge.io"
       }
     ]
   }
